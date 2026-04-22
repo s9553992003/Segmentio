@@ -327,7 +327,7 @@ open class Segmentio: UIView {
         shapeLayer.fillColor = backgroundColor.cgColor
         shapeLayer.strokeColor = backgroundColor.cgColor
         shapeLayer.lineWidth = height
-        shapeLayer.lineCap = rounded ? .round : .butt
+        shapeLayer.lineCap = rounded ? CAShapeLayerLineCap.round : CAShapeLayerLineCap.butt
         layer.insertSublayer(shapeLayer, below: sublayer)
     }
     
@@ -451,7 +451,7 @@ open class Segmentio: UIView {
         let shapeLayerPath = UIBezierPath()
         shapeLayerPath.move(to: startPoint)
         shapeLayerPath.addLine(to: endPointWithVerticalSeparator)
-        shapeLayerPath.lineCapStyle = roundedCorners ? .round : .butt
+        shapeLayerPath.lineCapStyle = roundedCorners ? CGLineCap.round : CGLineCap.butt
         
         if animated {
             isPerformingScrollAnimation = true
